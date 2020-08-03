@@ -19,3 +19,11 @@ Feature: juice shop example using new user Feature
       | repeat  | admin1234   |
     # Find the correct status code
     Then user gets status code "401"
+
+  Scenario: User changes password
+    When the user changes password using the following data:
+      | current | admin123  |
+      | new     | admin1234 |
+      | repeat  | admin1234 |
+    # Find the correct status code
+    Then user gets status code "200"
